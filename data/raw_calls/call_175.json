@@ -1,0 +1,10 @@
+{
+  "call_id": "CALL10175",
+  "agent_id": 3,
+  "customer_id": 125,
+  "language": "es",
+  "start_time": "2025-05-25T11:53:49.636307",
+  "duration_seconds": 545,
+  "transcript": "Agent: Word support bring paper return let.\nCustomer: Add least its company.\nAgent: Agreement certain mean.\nAgent: Truth for resource large it stuff.\nCustomer: Before product thought around save feel city.\nAgent: Cause drop eight hear organization.",
+  "status": "missed"
+}

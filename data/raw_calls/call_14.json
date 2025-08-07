@@ -1,0 +1,10 @@
+{
+  "call_id": "CALL10014",
+  "agent_id": 1,
+  "customer_id": 123,
+  "language": "fr",
+  "start_time": "2025-07-30T11:53:49.603422",
+  "duration_seconds": 294,
+  "transcript": "Agent: Single instead might economy.\nCustomer: Fast writer discover sort page every ago position Republican place.\nCustomer: Answer company adult wait reason them contain.\nAgent: Wrong often choose.\nCustomer: Because improve sometimes not foreign price always building of international.\nCustomer: Rise notice evidence continue often fish foreign guy wait role face good.\nCustomer: Strategy local reduce establish professional radio spring want improve.\nCustomer: More may believe.",
+  "status": "failed"
+}

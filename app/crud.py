@@ -1,8 +1,11 @@
-from sqlalchemy.orm import Session
-from sqlalchemy import and_
-from app import models
-from typing import Optional
 from datetime import datetime
+from typing import Optional
+
+from sqlalchemy import and_
+from sqlalchemy.orm import Session
+
+from app import models
+
 
 def get_calls(
     db: Session,
@@ -28,9 +31,5 @@ def get_calls(
         filters.append(models.Call.customer_sentiment_score <= max_sentiment)
 
     return (
-        db.query(models.Call)
-        .filter(and_(*filters))
-        .offset(offset)
-        .limit(limit)
-        .all()
+        db.query(models.Call).filter(and_(*filters)).offset(offset).limit(limit).all()
     )

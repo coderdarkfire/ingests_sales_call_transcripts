@@ -1,12 +1,10 @@
 from logging.config import fileConfig
 
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
+from sqlalchemy import engine_from_config, pool
 
 from alembic import context
-
-from app.models import SQLModel  # adjust import if needed
 from app.database import engine
+from app.models import SQLModel  # adjust import if needed
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -48,8 +46,8 @@ def run_migrations_offline() -> None:
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
         render_item=lambda type_, obj, autogen_context: (
-                "String()" if "AutoString" in str(type_) else False
-            )
+            "String()" if "AutoString" in str(type_) else False
+        ),
     )
 
     with context.begin_transaction():
@@ -77,6 +75,7 @@ def run_migrations_offline() -> None:
 #         with context.begin_transaction():
 #             context.run_migrations()
 
+
 def run_migrations_online():
     connectable = engine
 
@@ -88,7 +87,7 @@ def run_migrations_online():
             render_as_batch=True,  # <- useful for SQLite
             render_item=lambda type_, obj, autogen_context: (
                 "String()" if "AutoString" in str(type_) else False
-            )
+            ),
         )
 
         with context.begin_transaction():

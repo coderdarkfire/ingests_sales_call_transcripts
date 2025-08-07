@@ -1,0 +1,10 @@
+{
+  "call_id": "CALL10020",
+  "agent_id": 5,
+  "customer_id": 106,
+  "language": "en",
+  "start_time": "2025-07-26T11:53:49.605406",
+  "duration_seconds": 510,
+  "transcript": "Agent: Lead father wait.\nCustomer: Window game little front process.\nAgent: Recently east why century report hospital task clear result general candidate.\nCustomer: Share nice debate baby.\nAgent: Green piece involve mean.",
+  "status": "missed"
+}

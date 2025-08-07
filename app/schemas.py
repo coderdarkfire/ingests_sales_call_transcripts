@@ -1,6 +1,8 @@
-from pydantic import BaseModel
-from typing import Optional
 from datetime import datetime
+from typing import Optional
+
+from pydantic import BaseModel
+
 
 class CallBase(BaseModel):
     agent_id: str
@@ -10,8 +12,10 @@ class CallBase(BaseModel):
     duration_seconds: int
     transcript: str
 
+
 class CallCreate(CallBase):
     pass
+
 
 class CallOut(CallBase):
     id: str

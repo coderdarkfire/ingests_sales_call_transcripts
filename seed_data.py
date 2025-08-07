@@ -1,18 +1,15 @@
 # seed_data.py
 
-from sqlalchemy.orm import Session
-from app.database import engine
-from app.models import CallLog
-import datetime
-import random
-from sqlmodel import SQLModel
-from sqlalchemy.orm import Session
-from app.models import CallLog
-from app.database import engine
 import datetime
 import random
 
-# ✅ Ensure table exists
+from sqlalchemy.orm import Session
+from sqlmodel import SQLModel
+
+from app.database import engine
+from app.models import CallLog
+
+#  Ensure table exists
 SQLModel.metadata.create_all(engine)
 
 # Create DB session
@@ -51,4 +48,4 @@ session.add_all(call_logs)
 session.commit()
 session.close()
 
-print("✅ Sample call log data seeded successfully!")
+print(" Sample call log data seeded successfully!")

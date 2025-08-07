@@ -1,0 +1,10 @@
+{
+  "call_id": "CALL10030",
+  "agent_id": 2,
+  "customer_id": 108,
+  "language": "es",
+  "start_time": "2025-05-30T11:53:49.608455",
+  "duration_seconds": 529,
+  "transcript": "Customer: Return bag impact we test travel house natural threat worker individual play stay.\nCustomer: Marriage benefit black yes.\nAgent: Tax public type response.\nAgent: Ready run beautiful tend want vote.\nAgent: Somebody believe manager staff.",
+  "status": "failed"
+}

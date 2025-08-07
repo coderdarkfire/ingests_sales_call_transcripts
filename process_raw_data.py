@@ -1,24 +1,19 @@
-import os
-import json
-import random
 import asyncio
+import json
+import os
+import random
 from datetime import datetime, timedelta
 
 from faker import Faker
-from sqlalchemy.orm import Session
-from transformers import pipeline
 from sentence_transformers import SentenceTransformer
-from app.database import SessionLocal
-from app.models import CallLog
-from sqlmodel import SQLModel
 from sqlalchemy.orm import Session
+from sqlmodel import SQLModel
+from transformers import pipeline
+
+from app.database import SessionLocal, engine
 from app.models import CallLog
-from app.database import engine
 
-from datetime import datetime, timedelta
-import random
-
-# ✅ Ensure table exists
+#  Ensure table exists
 SQLModel.metadata.create_all(engine)
 
 
@@ -64,7 +59,7 @@ def create_fake_call(index):
         "start_time": start_time.isoformat(),
         "duration_seconds": duration,
         "transcript": generate_transcript(),
-        "status": random.choice(STATUSES)
+        "status": random.choice(STATUSES),
     }
 
 
@@ -78,19 +73,31 @@ async def ingest_calls(n=200):
 
 
 def calculate_agent_talk_ratio(transcript: str) -> float:
-    agent_words = sum(len(line.split()) for line in transcript.splitlines() if line.startswith("Agent:"))
-    customer_words = sum(len(line.split()) for line in transcript.splitlines() if line.startswith("Customer:"))
+    agent_words = sum(
+        len(line.split())
+        for line in transcript.splitlines()
+        if line.startswith("Agent:")
+    )
+    customer_words = sum(
+        len(line.split())
+        for line in transcript.splitlines()
+        if line.startswith("Customer:")
+    )
     total_words = agent_words + customer_words
     return round(agent_words / total_words, 2) if total_words > 0 else 0.0
 
 
 def analyze_sentiment(transcript: str) -> float:
-    customer_lines = [line[9:] for line in transcript.splitlines() if line.startswith("Customer:")]
+    customer_lines = [
+        line[9:] for line in transcript.splitlines() if line.startswith("Customer:")
+    ]
     if not customer_lines:
         return 0.0
     customer_text = " ".join(customer_lines)
     result = sentiment_analyzer(customer_text)[0]
-    return round(result["score"] if result["label"] == "POSITIVE" else -result["score"], 2)
+    return round(
+        result["score"] if result["label"] == "POSITIVE" else -result["score"], 2
+    )
 
 
 def process_and_store_to_db():
@@ -118,7 +125,7 @@ def process_and_store_to_db():
             status=data["status"],
             agent_talk_ratio=agent_talk_ratio,
             customer_sentiment_score=sentiment_score,
-            embedding=json.dumps(embedding)
+            embedding=json.dumps(embedding),
         )
         db.add(call)
 

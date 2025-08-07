@@ -1,0 +1,10 @@
+{
+  "call_id": "CALL10088",
+  "agent_id": 2,
+  "customer_id": 101,
+  "language": "fr",
+  "start_time": "2025-05-13T11:53:49.618882",
+  "duration_seconds": 297,
+  "transcript": "Customer: Consumer song family guess.\nCustomer: Employee gas administration help decision type a.\nAgent: Food thousand federal and chair tax specific red.\nCustomer: Clearly be put social its continue interesting mouth.\nAgent: Join stand expect trade.",
+  "status": "failed"
+}

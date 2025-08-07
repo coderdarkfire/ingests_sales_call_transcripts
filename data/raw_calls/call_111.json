@@ -1,0 +1,10 @@
+{
+  "call_id": "CALL10111",
+  "agent_id": 4,
+  "customer_id": 149,
+  "language": "fr",
+  "start_time": "2025-06-12T11:53:49.622782",
+  "duration_seconds": 397,
+  "transcript": "Customer: Data key consider edge wish.\nAgent: Adult land work today employee attention certainly hotel sign bar.\nCustomer: Quality tell yet central organization.\nAgent: Maintain many and peace glass.\nCustomer: Never citizen raise day perhaps new myself.",
+  "status": "failed"
+}

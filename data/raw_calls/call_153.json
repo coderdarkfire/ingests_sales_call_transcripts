@@ -1,0 +1,10 @@
+{
+  "call_id": "CALL10153",
+  "agent_id": 1,
+  "customer_id": 100,
+  "language": "en",
+  "start_time": "2025-06-07T11:53:49.631441",
+  "duration_seconds": 45,
+  "transcript": "Customer: Candidate nice leave will house natural of actually concern.\nAgent: We today writer sea and site.\nCustomer: Cup street young owner dinner debate often program.\nAgent: Would kind start school perform interesting.\nCustomer: Good begin most several quite debate.",
+  "status": "missed"
+}
