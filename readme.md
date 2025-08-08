@@ -101,3 +101,7 @@ Visit the API docs: http://127.0.0.1:8000/docs
 - Faker – for fake data
 - Sentence Transformers – for embeddings
 - Hugging Face – for sentiment analysis
+
+## for running 
+docker build -t call-analytics .
+docker run -it --rm -p 8000:8000 call-analytics
